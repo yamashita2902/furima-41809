@@ -1,7 +1,9 @@
 require_relative "boot"
 
 require "rails/all"
-require 'dotenv/rails'
+if %w[development test].include?(Rails.env)
+  require "dotenv/rails"
+end
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
