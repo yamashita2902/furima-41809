@@ -3,6 +3,10 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+    config.middleware.insert_before 0, Rack::Auth::Basic do |u, p|
+      u == ENV["BASIC_AUTH_USER"] && p == ENV["BASIC_AUTH_PASSWORD"]
+    end
+  
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
