@@ -1,24 +1,60 @@
-# README
+## users
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| user_name          | string | null: false |
+| user_email         | string | null: false, unique: true |
+| user_encrypted_password | string | null: false |
+| user_name_ZENKAKU  | string | null: false |
+| user_name_KANA     | string | null: false |
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## items
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| item_picture       | string | null: false |
+| item_name          | string | null: false |
+| item_text          | string | null: false |
+| item_time          | string | null: false |
+| user_id            | string | null: false, foreign_key: true|
+| Item_category      | string | null: false |
+| Item_situation     | string | null: false |
+| Item_area          | string | null: false |
+| Item_arrives_day   | string | null: false |
+| Item_price         | string | null: false |
+| Item_deliverystyle | string | null: false |
 
-Things you may want to cover:
 
-* Ruby version
+## comments
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| user_id            | string | null: false foreign_key: true|
+| comment            | string | null: false |
+| item_id            | string | null: false foreign_key: true|
 
-* System dependencies
+## purchaserecords
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| user_id            | string | foreign_key: true|
+| item_id            | string | foreign_key: true|
 
-* Configuration
+## shipping_address
+| Column                      | Type   | Options     |
+| --------------------------- | ------ | ----------- |
+| shipping_address_post_code  | string | null: false |
+| shipping_address_prefecture | string | null: false |
+| shipping_address_city       | string | null: false |
+| shipping_address_town       | string | null: false |
+| shipping_address_street     | string | null: false |
+| shipping_address_building   | string |             |
+| shipping_address_phone_number| string | null: false |
+| item_id                     | string | null: false foreign_key: true|
 
-* Database creation
+## item_categorys
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| category_id        | string | null: false foreign_key: true|
+| item_id            | string | null: false foreign_key: true|
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## categorys
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| category_name      | string | null: false |
