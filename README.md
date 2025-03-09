@@ -45,5 +45,5 @@
 | street                      | string | null: false |
 | building                    | string |             |
 | phone_number                | string | null: false |
-| purchaserecords             | references | null: false foreign_key: true|
+| purchaserecord             | references | null: false foreign_key: true|
 - belongs_to :purchaserecord
