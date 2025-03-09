@@ -8,7 +8,7 @@
 | name_zennkaku_namae| string | null: false |
 | name_kana_myouzi   | string | null: false |
 | name_kana_namae    | string | null: false |
-| birthday           | datetime | null: false |
+| birthday           | date   | null: false |
 - has_many :items
 - has_many :purchaserecords
 
@@ -30,8 +30,8 @@
 ## purchaserecords
 | Column             | Type   | Options     |
 | ------------------ | ------ | ----------- |
-| user               | references | foreign_key: true|
-| item               | references | foreign_key: true|
+| user               | references | null: false, foreign_key: true|
+| item               | references | null: false, foreign_key: true|
 - belongs_to :user
 - belongs_to :item
 - has_one :shipping_address
@@ -42,9 +42,8 @@
 | post_code                   | string | null: false |
 | prefecture_id               | integer | null: false |
 | city                        | string | null: false |
-| town                        | string | null: false |
 | street                      | string | null: false |
 | building                    | string |             |
 | phone_number                | string | null: false |
-| item                        | references | null: false foreign_key: true|
+| purchaserecords             | references | null: false foreign_key: true|
 - belongs_to :purchaserecord
