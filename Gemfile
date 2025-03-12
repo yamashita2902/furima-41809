@@ -47,6 +47,8 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem 'rspec-rails', '~> 4.0.0'
+   gem 'factory_bot_rails'
   
 end
 
@@ -69,3 +71,4 @@ group :test do
 end
 gem 'pg'
 gem 'dotenv-rails', '~> 2.8', groups: [:development, :test]
+gem 'devise'
