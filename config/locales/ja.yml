@@ -1,0 +1,28 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "名前を入力してください"
+            name_zennkaku_myouzi:
+              blank: "姓を入力してください"
+              invalid: "全角で入力してください"
+            name_zennkaku_namae:
+              blank: "名を入力してください"
+              invalid: "全角で入力してください"
+            name_kana_myouzi:
+              blank: "姓（カナ）を入力してください"
+              invalid: "全角カタカナで入力してください"
+            name_kana_namae:
+              blank: "名（カナ）を入力してください"
+              invalid: "全角カタカナで入力してください"
+            birthday:
+              blank: "生年月日を入力してください"
+  date:
+    order: ["year", "month", "day"] 
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+      hello: "こんにちは"
