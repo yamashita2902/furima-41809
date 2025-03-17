@@ -73,3 +73,4 @@ end
 gem 'pg'
 gem 'dotenv-rails', '~> 2.8', groups: [:development, :test]
 gem 'devise'
+gem 'active_hash'
