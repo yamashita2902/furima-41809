@@ -13,14 +13,11 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
-  def private_method  # プライベートメソッド
+ private # プライベートメソッド
     def item_params
-      params.require(:item).permit(:name, :explanation, :price,:user,:category_id,:situation_id, :prefecture_id, :arrives_day_id, :deliverystyle_id)
+      params.require(:item).permit(:name, :explanation, :price,:category_id,:situation_id, :prefecture_id, :arrives_day_id, :deliverystyle_id,:image).merge(user_id: current_user.id)
     end
 
-  end
-
-  def any_method  # プライベートメソッド
-    
+     
   end
 end
