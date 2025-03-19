@@ -142,6 +142,9 @@
     <%# /下部ボタン %>
   </div>
   <% end %>
+  <% content_for :js do %>
+   <%= javascript_import_module_tag "item_price" %>
+ <% end %>
 
   <footer class="items-sell-footer">
     <ul class="menu">
