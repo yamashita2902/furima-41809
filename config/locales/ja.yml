@@ -2,24 +2,36 @@ ja:
   activerecord:
     errors:
       models:
-        user:
+        item:
           attributes:
             name:
               blank: "名前を入力してください"
-            name_zennkaku_myouzi:
-              blank: "姓を入力してください"
-              invalid: "全角で入力してください"
-            name_zennkaku_namae:
-              blank: "名を入力してください"
-              invalid: "全角で入力してください"
-            name_kana_myouzi:
-              blank: "姓（カナ）を入力してください"
-              invalid: "全角カタカナで入力してください"
-            name_kana_namae:
-              blank: "名（カナ）を入力してください"
-              invalid: "全角カタカナで入力してください"
-            birthday:
-              blank: "生年月日を入力してください"
+            explanation:
+              blank: "説明を入力してください"
+            user:
+              blank: "ユーザーを選択してください"
+            category_id:
+              blank: "カテゴリーを選択してください"
+            situation_id:
+              blank: "状態を選択してください"
+            prefecture_id:
+              blank: "都道府県を選択してください"
+            arrives_day_id:
+              blank: "発送日を選択してください"
+            delivery_style_id:
+              blank: "配送方法を選択してください"
+            image:
+              blank: "画像をアップロードしてください"
+            price:
+              blank: "価格を入力してください"
+              greater_than_or_equal_to: "価格は¥300以上で入力してください"
+              less_than_or_equal_to: "価格は¥9,999,999以下で入力してください"
+              invalid: "価格は半角数字で入力してください"
+      messages:
+        required: "必須項目です"
+        blank: "入力してください"
+        greater_than_or_equal_to: "¥300以上で入力してください"
+        less_than_or_equal_to: "¥9,999,999以下で入力してください"
   date:
     order: ["year", "month", "day"] 
   time:

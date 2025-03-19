@@ -8,7 +8,7 @@ class Article < ApplicationRecord
   belongs_to :arrivesday
   belongs_to :deliverystyle
   
-
-  validates :name, :explanation, :price, :user, presence: true
-  validates :category_id, :situation_id, :prefecture_id, :arrivesday_id, :deliverystyle_id, numericality: { other_than: 1, message: "can't be blank"}
+ 
+  validates :name, :explanation, :user, presence: true
+  validates :category_id, :situation_id, :prefecture_id, :arrives_day_id, :delivery_style_id, numericality: { other_than: 1, message: "can't be blank"}
 end
