@@ -1,5 +1,11 @@
 class Item < ApplicationRecord
-  validates :name, :explanation, :price, :user, :category_id, :situation_id, :prefecture_id, :arrives_day_id, :delivery_style_id,:image , presence: true
+  validates :name, :explanation, :price, :category_id, :situation_id, :prefecture_id, :arrives_day_id, :delivery_style_id,:image , presence: true
+
+  belongs_to :category
+  belongs_to :situation
+  belongs_to :prefecture
+  belongs_to :arrivesday
+  belongs_to :deliverystyle
   
 
   belongs_to :user
