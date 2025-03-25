@@ -19,4 +19,8 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :arrives_day
   belongs_to_active_hash :delivery_style
+
+  def owned_by?(user)
+    user.present? && user.id == user_id
+  end
 end
