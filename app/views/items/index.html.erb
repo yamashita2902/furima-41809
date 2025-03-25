@@ -136,11 +136,10 @@
            <%# <% end %> 
           <%# //商品が売れていればsold outを表示しましょう %>
         <div class='item-info'>
-          
-          <div class='item-img-content'>
+         <%= link_to item_path(item) do %>
+         <div class='item-img-content'>
           <%= image_tag  item.image, class:"item-img" %>
          </div>
-         <%#link_to item_path(item) do %>
           <h3 class='item-name'>
             <%= item.name %>
           </h3>
@@ -151,9 +150,8 @@
               <span class='star-count'>0</span>
             </div>
           </div>
-          
+          <% end %> 
         </div>
-        <%# <% end %> 
       </li>
       <% end %>
       <% if @items.empty? %>
