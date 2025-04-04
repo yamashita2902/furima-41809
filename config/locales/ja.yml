@@ -27,6 +27,21 @@ ja:
               greater_than_or_equal_to: "価格は¥300以上で入力してください"
               less_than_or_equal_to: "価格は¥9,999,999以下で入力してください"
               invalid: "価格は半角数字で入力してください"
+        purchaserecord_shipping_address:
+          attributes:
+            item_id:
+              blank: "アイテムを選択してください"
+            post_code:
+              blank: "郵便番号を入力してください"
+              invalid: "郵便番号が無効です。ハイフン（-）を含めてください"
+            prefecture:
+              blank: "都道府県を選択してください"
+            city:
+              blank: "市区町村を入力してください"
+            street:
+              blank: "番地を入力してください"
+            phone_number:
+              blank: "電話番号を入力してください"
       messages:
         required: "必須項目です"
         blank: "入力してください"
