@@ -2,10 +2,7 @@ class PurchaserecordShippingAddress
   include ActiveModel::Model
   attr_accessor :post_code, :prefecture_id, :city, :street, :building, :phone_number, :user_id, :item_id, :purchaserecord_id
   attr_accessor :token
-  # belongs_to :purchaserecord
-  # extend ActiveHash::Associations::ActiveRecordExtensions
-  # belongs_to_active_hash :prefecture
-
+  
   with_options presence: true do
     validates :user_id
     validates :item_id
