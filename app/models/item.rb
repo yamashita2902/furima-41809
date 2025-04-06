@@ -24,4 +24,7 @@ class Item < ApplicationRecord
   def owned_by?(user)
     user.present? && user.id == user_id
   end
+  def sold_out?
+    purchaserecords.exists?
+  end
 end

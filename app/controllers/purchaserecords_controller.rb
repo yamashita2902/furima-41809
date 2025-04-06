@@ -1,5 +1,6 @@
 class PurchaserecordsController < ApplicationController
   before_action :set_item, only: [:index, :new, :create]
+  before_action :redirect_sold_out,only: [:index]
   def index
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
     @purchaserecord_shipping_address = PurchaserecordShippingAddress.new
@@ -44,5 +45,7 @@ class PurchaserecordsController < ApplicationController
       currency: 'jpy'                 
     )
   end
-  
+  def redirect_sold_out
+    redirect_to root_path if @item.sold_out?
+  end
 end

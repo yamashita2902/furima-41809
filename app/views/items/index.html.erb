@@ -129,11 +129,11 @@
       <% @items.each do |item| %>
       <li class='list'>
           <%# 商品が売れていればsold outを表示しましょう %>
-           <%# <% if item.sold_out? %>
-          <%# <div class='sold-out'> %>
-            <%# <span>Sold Out!!</span> %>
-          <%# </div>  %>
-           <%# <% end %> 
+         <% if item.sold_out? %>
+         <div class='sold-out'>
+           <span>Sold Out!!</span>
+         </div> 
+         <% end %>
           <%# //商品が売れていればsold outを表示しましょう %>
         <div class='item-info'>
          <%= link_to item_path(item) do %>
