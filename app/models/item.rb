@@ -3,6 +3,7 @@ class Item < ApplicationRecord
             :image, presence: true
 
   belongs_to :user
+  has_one :purchaserecord
   has_one_attached :image
   validates :category_id, :situation_id, :prefecture_id, :arrives_day_id, :delivery_style_id,
             numericality: { other_than: 1, message: "can't be blank" }
@@ -22,5 +23,9 @@ class Item < ApplicationRecord
 
   def owned_by?(user)
     user.present? && user.id == user_id
+  end
+
+  def sold_out?
+    purchaserecords.exists?
   end
 end

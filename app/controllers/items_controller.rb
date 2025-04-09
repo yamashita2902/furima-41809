@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update,:destroy]
-  before_action :set_item, only: [:show, :edit, :update,:destroy]
-  before_action :redirect_unless_owner, only: [:update, :edit,:destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :redirect_unless_owner, only: [:update, :edit, :destroy]
+  before_action :redirect_sold_out, only: [:edit]
 
   def index
     @items = Item.all.order('created_at DESC')
@@ -53,5 +54,9 @@ class ItemsController < ApplicationController
 
   def redirect_unless_owner
     redirect_to root_path unless @item.owned_by?(current_user)
+  end
+
+  def redirect_sold_out
+    redirect_to root_path if @item.sold_out?
   end
 end
