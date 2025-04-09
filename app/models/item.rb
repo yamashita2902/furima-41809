@@ -3,7 +3,7 @@ class Item < ApplicationRecord
             :image, presence: true
 
   belongs_to :user
-  has_one_attached :purchaserecord
+  has_one :purchaserecord
   has_one_attached :image
   validates :category_id, :situation_id, :prefecture_id, :arrives_day_id, :delivery_style_id,
             numericality: { other_than: 1, message: "can't be blank" }
