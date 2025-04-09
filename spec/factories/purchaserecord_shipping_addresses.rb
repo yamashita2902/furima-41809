@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :purchaserecord_shipping_address do
-    postal_code    { '123-4567' }
+    post_code    { '123-4567' }
     prefecture_id  { 2 }
     city           { '渋谷区' }
     street         { '1-1' }
