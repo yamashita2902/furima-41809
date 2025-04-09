@@ -50,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: furima_41809_production
+  database: furima_41809_y_production
   username: furima_41809
   password: <%= ENV["FURIMA_41809_DATABASE_PASSWORD"] %>
