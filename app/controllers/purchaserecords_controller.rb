@@ -1,6 +1,8 @@
 class PurchaserecordsController < ApplicationController
+  before_action :authenticate_user!, only:[:index, :new, :create]
   before_action :set_item, only: [:index, :new, :create]
   before_action :redirect_sold_out, only: [:index]
+  before_action :redirect_unless_owner, only: [:index, :new, :create]
   def index
     gon.public_key = ENV['PAYJP_PUBLIC_KEY']
     @purchaserecord_shipping_address = PurchaserecordShippingAddress.new
@@ -44,6 +46,10 @@ class PurchaserecordsController < ApplicationController
       card: purchaserecord_params[:token],
       currency: 'jpy'
     )
+  end
+
+  def redirect_unless_owner
+    redirect_to root_path if @item.owned_by?(current_user)
   end
 
   def redirect_sold_out
