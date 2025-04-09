@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :purchaserecords
+  has_many :items
   validates :name, presence: true
   validates :name_zennkaku_myouzi, presence: true,
                                    format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'is invalid. Input full-width characters.' }
