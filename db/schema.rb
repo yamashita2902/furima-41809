@@ -39,11 +39,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_04_03_143907) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "articles", charset: "utf8mb3", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "items", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.text "explanation", null: false
@@ -52,7 +47,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_04_03_143907) do
     t.integer "category_id", null: false
     t.integer "situation_id", null: false
     t.integer "prefecture_id", null: false
-    t.integer "arrives_day_id", null: false
+    t.integer "arrives_day_id_id", null: false
     t.integer "delivery_style_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -66,19 +61,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_04_03_143907) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_purchaserecords_on_item_id"
     t.index ["user_id"], name: "index_purchaserecords_on_user_id"
-  end
-
-  create_table "shipping_addres", charset: "utf8mb3", force: :cascade do |t|
-    t.string "post_code", null: false
-    t.integer "prefecture_id", null: false
-    t.string "city", null: false
-    t.string "street", null: false
-    t.string "building"
-    t.string "phone_number", null: false
-    t.bigint "purchaserecord_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["purchaserecord_id"], name: "index_shipping_addres_on_purchaserecord_id"
   end
 
   create_table "shipping_addresses", charset: "utf8mb3", force: :cascade do |t|
@@ -117,6 +99,5 @@ ActiveRecord::Schema[7.1].define(version: 2025_04_03_143907) do
   add_foreign_key "items", "users"
   add_foreign_key "purchaserecords", "items"
   add_foreign_key "purchaserecords", "users"
-  add_foreign_key "shipping_addres", "purchaserecords"
   add_foreign_key "shipping_addresses", "purchaserecords"
 end
