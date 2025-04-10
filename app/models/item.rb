@@ -26,6 +26,6 @@ class Item < ApplicationRecord
   end
 
   def sold_out?
-    purchaserecords.exists?
+    purchaserecord.present?
   end
 end
