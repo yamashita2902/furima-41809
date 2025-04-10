@@ -1,5 +1,6 @@
 class PurchaserecordsController < ApplicationController
   before_action :authenticate_user!, only:[:index,:create]
+  before_action :set_payjp_key, only:[:index,:create]
   before_action :set_item, only: [:index, :create]
   before_action :redirect_sold_out, only: [:index]
   before_action :redirect_unless_owner, only: [:index, :create]
@@ -24,7 +25,9 @@ class PurchaserecordsController < ApplicationController
   end
 
   private # プライベートメソッド
-
+  def set_payjp_key
+    gon.public_key = ENV['PAYJP_PUBLIC_KEY']
+  end
   def set_item
     @item = Item.find(params[:item_id])
   end
