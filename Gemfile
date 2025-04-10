@@ -79,3 +79,6 @@ gem 'image_processing', '~> 1.2'
 gem 'payjp'
 gem 'gon'
 gem 'database_cleaner-active_record'
+group :production do
+  gem 'pg'
+end
