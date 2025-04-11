@@ -9,13 +9,13 @@
 
 /* form-wrapは商品購入画面でも使用しています */
 .form-wrap {
-  width: 50%;
+  width: 100%;
   background-color: white;
   padding-bottom: 70px;
 }
 
 .form-header {
-  width: 100%;
+  width: 50%;
   height: 120px;
   text-align: center;
   font-size: 22px;

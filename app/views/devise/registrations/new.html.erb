@@ -1,7 +1,7 @@
 <%= render "shared/second-header"%>
 
 <%= form_with model: @user, url: user_registration_path, class: 'rails_health_check', local: true do |f| %> 
-
+<div class='registration-main'>
 <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
@@ -98,6 +98,7 @@
     <%= f.submit "会員登録" ,class:"register-red-btn" %>
   </div>
   <p class='register-info'>本人情報の登録について</p>
+</div>
 </div>
 <% end %>
 
