@@ -82,3 +82,5 @@ gem 'database_cleaner-active_record'
 group :production do
   gem 'pg'
 end
+	
+gem "aws-sdk-s3", require: false
