@@ -70,7 +70,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-gem 'pg'
+
 gem 'dotenv-rails', '~> 2.8', groups: [:development, :test]
 gem 'devise'
 gem 'active_hash'
@@ -79,11 +79,9 @@ gem 'image_processing', '~> 1.2'
 gem 'payjp'
 gem 'gon'
 gem 'database_cleaner-active_record'
-group :production do
-  gem 'pg'
-end
 	
 gem "aws-sdk-s3", require: false
 group :production do
+   gem 'pg'
   gem 'unicorn', '6.1.0'
 end
