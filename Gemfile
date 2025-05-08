@@ -90,3 +90,4 @@ gem 'gon'
 gem 'database_cleaner-active_record'
 	
 gem "aws-sdk-s3", require: false
+gem "nokogiri", force_ruby_platform: true
