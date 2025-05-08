@@ -71,6 +71,10 @@ group :test do
   gem "selenium-webdriver"
 end
 
+group :production do
+ gem 'unicorn', '6.1.0'
+end
+
 gem 'dotenv-rails', '~> 2.8', groups: [:development, :test]
 gem 'devise'
 gem 'active_hash'
@@ -81,7 +85,3 @@ gem 'gon'
 gem 'database_cleaner-active_record'
 	
 gem "aws-sdk-s3", require: false
-group :production do
-   gem 'pg'
-  gem 'unicorn', '6.1.0'
-end
